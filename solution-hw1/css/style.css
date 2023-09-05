@@ -24,7 +24,8 @@ nav a:link, nav a:visited{
 .products{
   margin: auto;
   margin-bottom: 60px;
-  width: 404px;
+  padding-top: 4px;
+  width: 412px;
 }
 
 .products img{
@@ -33,6 +34,7 @@ nav a:link, nav a:visited{
 }
 
 .products a:link, .products a:hover, .products a:visited{
+  text-align: left;
   text-decoration: none;
   color: black;
 }
@@ -40,6 +42,14 @@ nav a:link, nav a:visited{
 .products:hover{
   background-color: yellow;
   font-weight: bold;
+}
+
+.products p{
+  padding-left: 4px;
+}
+
+.products .price{
+  font-weight: 100;
 }
 
 .product_detail{
