@@ -1,3 +1,4 @@
+/* Styles for header, logo, and navigation bars */
 header{
   border-bottom: 3px solid black;
 }
@@ -16,11 +17,13 @@ nav a:link, nav a:visited{
   color: black;
 }
 
+/* Style for titles of each page */
 .mini_title{
   margin-top: 60px;
   margin-bottom: 40px;
 }
 
+/* Styles for product gallery page */
 .products{
   margin: auto;
   margin-bottom: 60px;
@@ -35,7 +38,6 @@ nav a:link, nav a:visited{
 
 .products a:link, .products a:hover, .products a:visited{
   text-align: left;
-  text-decoration: none;
   color: black;
 }
 
@@ -50,8 +52,10 @@ nav a:link, nav a:visited{
 
 .products .price{
   font-weight: 100;
+  text-align: left;
 }
 
+/* Styles for product detail page */
 .product_detail{
   margin: auto;
   width: 604px;
@@ -80,7 +84,6 @@ nav a:link, nav a:visited{
 }
 
 #add_to_cart{
-  background-color: yellow;
   border: 2px solid black;
   margin-left: 10px;
   padding-left: 30px;
@@ -90,6 +93,11 @@ nav a:link, nav a:visited{
   font-weight: bold;
 }
 
+#add_to_cart:hover{
+  background-color: yellow;
+}
+
+/* Styles for shopping cart page */
 .shopping_cart{
   width: 65%;
   margin: auto;
@@ -107,11 +115,14 @@ nav a:link, nav a:visited{
 }
 
 .checkout button{
-  background-color: yellow;
   border: 2px solid black;
   font-weight: bold;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 8px;
   padding-bottom: 8px;
+}
+
+.checkout button:hover{
+  background-color: yellow;
 }
