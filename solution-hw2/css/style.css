@@ -1,0 +1,226 @@
+/* Styles for header, logo, and navigation bars */
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+}
+
+.header_content{
+  flex-grow: 1;
+  padding-left: 3%;
+}
+
+header nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 3px solid black;
+  height: 120px;
+}
+
+header nav a{
+  margin-right: 10%;
+}
+
+.mini_title{
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.mini_title p{
+  font-size: 1.5em;
+}
+
+nav .highlight{
+  background-color: yellow;
+  font-weight: bold;
+}
+
+nav a:link, nav a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+/* Styles for product gallery page */
+.row{
+  display: flex;
+  text-align: center;
+}
+
+.products{
+  margin: auto;
+  margin-bottom: 40px;
+  padding-top: 4px;
+  width: 295px;
+}
+
+.products img{
+  width: 285px;
+  border: 2px solid black;
+}
+
+.products a:link, .products a:hover, .products a:visited{
+  text-align: left;
+  color: black;
+}
+
+.products:hover{
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.products p{
+  padding-left: 4px;
+}
+
+.products .price{
+  font-weight: 100;
+  text-align: left;
+}
+
+/* Styles for product detail page */
+.product_detail{
+  margin: auto;
+  display: flex;
+  padding-left: 20%;
+  padding-right: 8%;
+  margin-bottom: 50px;
+}
+
+.product_detail img{
+  width: 600px;
+  border: 2px solid black;
+}
+
+.detail_descr{
+  width: 250px;
+  margin: auto;
+  text-align: left;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro, .options{
+  margin-bottom: 10px;
+}
+
+#glazing, #size{
+  width: 250px;
+  height: 37px;
+}
+
+.add_cart{
+  display: flex;
+  justify-content: end;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.add_cart p{
+  margin-right: 26px;
+}
+
+#add_to_cart{
+  border: 2px solid black;
+  margin-left: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+#add_to_cart:hover{
+  background-color: yellow;
+}
+
+/* Styles for shopping cart page */
+.shopping_cart{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart_info{
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  border-bottom: 3px solid black ;
+  margin-right: 15%;
+}
+
+.shopping_cart img{
+  width: 200px;
+  border: 2px solid black;
+}
+
+.cart_descr{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.item_info{
+  margin-left: 20px;
+  width: 90%;
+}
+
+.remove_link{
+  margin-bottom: 2%;
+}
+
+.remove_link a{
+  color:black;
+}
+
+.cart_price{
+  margin-top: 30px;
+  margin-bottom: 70px;
+  width: 8%;
+}
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout_total{
+  display: flex;
+  justify-content: end;
+}
+
+.text_price{
+  display: flex;
+  margin-right: 15%;
+  width: 55%;
+}
+
+.text{
+  margin-left: 220px;
+  width: 90%;
+}
+
+.checkout_btn{
+  display: flex;
+  justify-content: end;
+  margin-right: 15%;
+  margin-bottom: 30px;
+}
+
+.checkout button{
+  border: 2px solid black;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 12%;
+  height: 50px;
+}
+
+.checkout button:hover{
+  background-color: yellow;
+}
