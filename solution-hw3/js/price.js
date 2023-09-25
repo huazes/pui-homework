@@ -73,36 +73,3 @@ function onSelectValueChange (){
 
     finalPrice.innerHTML = "$" + output;
 }
-
-// function glazingChange(){
-//     const priceChange = parseFloat(this.value);
-
-//     let newPrice = 2.49;
-
-//     for(i = 0; i < allGlazings.length; i++){
-//         if (priceChange === allGlazings[i]){
-//             newPrice += priceChange;
-//             price = newPrice;
-//         }
-//     }
-
-//     let finalOutput = price * multiply;
-//     let roundedFinalOutput = finalOutput.toFixed(2);
-
-//     finalPrice.innerHTML = "$" + roundedFinalOutput;
-// }
-
-// function packChange(){
-//     const selectedPackSize = parseFloat(this.value);
-
-//     for(i = 0; i < allPackSizes.length; i++){
-//         if(selectedPackSize === allPackSizes[i]){
-//            multiply = selectedPackSize;
-//         }
-//     }
-
-//     let finalOutput = price * multiply;
-//     let roundedFinalOutput = finalOutput.toFixed(2);
-
-//     finalPrice.innerHTML = "$" + roundedFinalOutput;
-// }
