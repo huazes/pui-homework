@@ -28,7 +28,7 @@ let allSizes = [
     },
     {
         size: 6,
-        price: 6,
+        price: 5,
     },
     {
         size: 12,
