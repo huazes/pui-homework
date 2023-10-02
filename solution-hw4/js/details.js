@@ -54,11 +54,14 @@ const rollType = params.get("roll");
 const headerSec = document.querySelector("#title_text");
 headerSec.innerHTML = rollType + " cinnamon roll";
 
+let originalPrice = document.querySelector("#final_price");
+let originalPriceAmount = rolls[rollType]["basePrice"];
+originalPrice.innerHTML = "$" + originalPriceAmount;
+
 const imageSec = document.querySelector("#detail_img");
 
 imageSec.src = "assets/products/" + rolls[rollType]["imageFile"];
 
-///// option section /////
 let rollFinalPrice = document.querySelector("#final_price");
 let glazingDropdown = document.getElementById("glazing");
 let sizeDropdown = document.getElementById("size");
@@ -85,7 +88,7 @@ for (let option in allSizes){
     sizeDropdown.appendChild(newOption);
 }
 
-function onSelectValueChange (){
+function onSelectValueChange(){
     let selectedGlazing = document.querySelector("#glazing").value;
     let selectedSize = parseFloat(document.querySelector("#size").value);
 
