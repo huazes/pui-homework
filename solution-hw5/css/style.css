@@ -171,16 +171,17 @@ nav a:link, nav a:visited{
 
 .remove_link{
   margin-bottom: 2%;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
-.remove_link a{
-  color:black;
-}
 
 .cart_price{
   margin-top: 30px;
   margin-bottom: 70px;
-  width: 8%;
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .checkout{
@@ -202,6 +203,12 @@ nav a:link, nav a:visited{
 .text{
   margin-left: 220px;
   width: 90%;
+}
+
+#final_price{
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .checkout_btn{
