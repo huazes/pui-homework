@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Store</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script defer src="js/cartUpdate.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/logo/logo-01.svg" alt="Bun Bun Logo" width="400">
+        </a>
+
+        <div class="header_content">
+            <nav>
+                <a href="index.html"><p><span>PRODUCTS</span></p></a>
+                <a href="shopping_cart.html"><p><span class="highlight">CART</span></p></a>
+            </nav>
+    
+            <div class="mini_title">
+                <p>Shopping Cart</p>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="shopping_cart">
+            <div class="cart_info">
+                <template id="item-template">
+                    <div class="cart_card">
+                        <div class="cart_descr">
+                            <img id="roll_image" src="assets/products/double-chocolate-cinnamon-roll.jpg" alt="Double-chocolate cinnamon roll" width="200">
+            
+                            <div class="item_info">
+                                <p id="roll_name"></p>
+                                <p id="roll_glazing"></p>
+                                <p id="pack_size"></p>
+                            </div>
+            
+                            <div class="cart_price">
+                                <p id="item_price"></p>
+                            </div>
+                        </div>
+        
+                        <div class="remove_link">
+                            <p>Remove</p>
+                    </div>
+                </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="checkout">
+            <div class="checkout_total">
+                <div class="text_price">
+                    <p class="text">Total</p>
+                    <p id="final_price">$29.94</p>
+                </div>
+            </div>
+            
+            <div class="checkout_btn">
+                <button>Checkout</button>
+            </div>
+            
+        </div>
+    </main>
+</body>

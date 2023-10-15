@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Bun Bun Store</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script defer src="js/rollsData.js"></script>
+    <script defer src="js/details.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/logo/logo-01.svg" alt="Bun Bun Logo" width="400">
+        </a>
+
+        <div class="header_content">
+            <nav>
+                <a href="index.html"><p><span class="highlight">PRODUCTS</span></p></a>
+                <a href="shopping_cart.html"><p><span>CART</span></p></a>
+            </nav>
+    
+            <div class="mini_title">
+                <p id="title_text">Original cinnamon roll</p>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="product_detail">
+            <img id="detail_img"
+            src="assets/products/original-cinnamon-roll.jpg" 
+            alt="Original cinnamon roll" width="600">
+
+            <div class="detail_descr">
+                <div class="intro">
+                    <p>Customize our declicious, hand-made cinammon roll to your liking!</p>
+                </div>
+                
+                <div class="options">
+                    <p>Glazing:</p>
+                    <select id="glazing" onchange="onSelectValueChange(this)"></select>
+
+                    <p>Pack size:</p>
+                    <select id="size" onchange="onSelectValueChange(this)"></select>
+                </div>
+                
+                 <div class="add_cart">
+                    <p id="final_price">$2.49 </p>
+                    <button id="add_to_cart" onclick="createRollInfo(this)">Add to Cart</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+</body>
