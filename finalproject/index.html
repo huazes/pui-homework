@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Typeface Tool</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <script defer src="js/mainPageInteraction.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Barrio&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Julius+Sans+One&family=Kranky&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+</head>
+
+<body>
+    <div class="filter-total">
+        <div class="filter">
+            <div class="reset-button">
+                <button id="reset" onclick="resetFilter()">Reset</button>
+            </div>
+    
+            <!-- User input text-->
+            <div class="user-input">
+                <h4>Preview Text</h4>
+                <input id="user-input-text" type="text" placeholder="Input your text here" onchange="updateTextContent(this)">
+            </div>
+            
+            <!-- The mood user tries to convey-->
+            <div class="user-mood">
+                <h4>Mood</h4>
+                <div class="mood-options">
+                    <button id="formal" onclick="changeMood(this)">Formal</button>
+                    <button id="creative" onclick="changeMood(this)">Creative</button>
+                    <button id="playful" onclick="changeMood(this)">Playful</button>
+                    <button id="clear" onclick="changeMood(this)">Clear</button>
+                    <button id="elegant" onclick="changeMood(this)">Elegant</button>
+                    <button id="friendly" onclick="changeMood(this)">Friendly</button>
+                    <button id="assertive" onclick="changeMood(this)">Assertive</button>
+                </div>
+            </div>
+           
+            <!-- The typeface's functionality-->
+            <div class="user-functionality">
+                <h4>Functionality</h4>
+                <div class="functionality-options">
+                    <button id="heading" onclick="changeFunc(this)">Heading</button>
+                    <button id="sub-heading" onclick="changeFunc(this)">Sub-heading</button>
+                    <button id="paragraph" onclick="changeFunc(this)">Paragraph</button>
+                </div>
+            </div>
+            
+           <!-- The typeface's availability-->
+            <div class="user-availability">
+                <h4>Availability</h4>
+                <div class="availability-options">
+                    <button id="canva" onclick="changeAvail(this)">Canva</button>
+                    <button id="figma" onclick="changeAvail(this)">Figma</button>
+                    <button id="google-slides" onclick="changeAvail(this)">Google Slides</button>
+                </div>
+            </div>
+            
+            
+        </div>
+    
+        <div class="division">
+        </div>
+
+        <!-- Output-->
+        <div class="outputs">
+                <!--<template id="typeface-template"></template>-->
+                    <div class="typeface-list">
+                    </div>
+                </a>
+        </div>            
+        
+    </div>
+    
+</body>

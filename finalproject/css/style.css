@@ -1,0 +1,484 @@
+body{
+    background-color: #111111;
+    color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+}
+
+.filter-total{
+    display: flex;
+}
+
+.filter{
+    width: 38%;
+    margin-left: 7%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-link {
+    color:#f5f5f5;
+}
+
+.back-link:hover{
+    color:#FF7A00;
+}
+
+.top-nav{
+    margin-bottom: 40%;
+    margin-top: 10%;
+}
+
+h4{
+    font-size: 20px;;
+}
+
+.guidance{
+    color: #444444;
+    font-size: large;
+}
+
+.reset-button{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+#reset{
+    margin-right: 5%;
+    background-color: #111111;
+    color:#f5f5f5;
+    transition: 0.7s;
+    border: none;
+}
+
+#reset:hover{
+    color: #FF7A00;
+}
+
+.user-input, .user-mood, .user-functionality, .user-availability{
+    margin-bottom: 6%;
+}
+
+.user-input{
+    width: 84%;
+}
+
+input{
+    background-color: #111111;
+    border: 0.5px solid #444444;
+    border-radius: 10px;
+    width: 95%;
+    height: 70px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: #f5f5f5;
+    transition: 0.4s;
+    font-size: 15px;
+    font-weight: 200;
+    margin-bottom: 6%;
+}
+
+input:focus{
+    outline: none;
+    border: 0.5px solid #FF7A00;
+}
+
+.mood-options{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.mood-options button, .functionality-options button, .availability-options button{
+    margin-right: 11%;
+    margin-bottom: 5%;
+    background-color:#111111;
+    color:#f5f5f5;
+    border: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.mood-options button:hover, .functionality-options button:hover, .availability-options button:hover{
+    color: #FF7A00;
+}
+
+.typeface-link{
+    color:#f5f5f5;
+    text-decoration: none;
+}
+
+.typeface-link:visited{
+    color:#f5f5f5;
+}
+
+.clickedOption{
+    text-decoration: #FF7A00 underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 1px;
+}
+
+.functionality-options, .availability-options{
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0,4s;
+}
+
+.functionality-options p, .availability-options p{
+    margin-right: 11%;
+    padding-bottom: 0.6%;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.division{
+    width: 0.5px;
+    background-color: #444444;
+}
+
+.outputs{
+    width: 62%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.one-typeface-container{
+    border-bottom: 0.5px solid #444444;
+    margin-bottom: 5%;
+    width: 95%;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.one-typeface-container:hover{
+    border-left: 40px solid #FF7A00;
+}
+
+.typeface-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.typeface-content{
+    font-size: 28px;
+}
+
+/*----Style for individual typeface----*/
+.typeface-total{
+    display: flex;
+}
+
+.filter-panel{
+    width: 20%;
+    margin-left: 6%;
+    margin-top: 0.7%;
+    margin-right: 2%;
+}
+
+.back{
+    text-align: end;
+    margin-bottom: 45%;
+}
+
+.back a{
+    text-decoration: none;
+    color: #f5f5f5;
+    transition: 0.3s;
+}
+
+.back a:hover{
+    font-size: 17.5px;
+}
+
+.suggsted-typefaces{
+    margin-bottom: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtered-typeface{
+    width: 60%;
+    margin-bottom: 15%;
+    font-weight: bold;
+}
+
+.filtered-typeface:hover{
+   text-decoration: underline;
+}
+
+.suggsted-typefaces a{
+    color:#f5f5f5;
+    text-decoration: none;
+}   
+
+.suggsted-typefaces a:visited{
+    color:#f5f5f5;
+    text-decoration: none;
+}
+
+.typeface-panel{
+    width: 80%;
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+#indi-typeface-name{
+    font-size: 40px;
+    margin-bottom: 2%;
+}
+
+.typeface-adjustments{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.size, .font, .alignment, .color{
+    display: flex;
+    margin-right: 5%;
+    align-items: center;
+}
+
+select{
+    background-color: #111111;
+    color:#f5f5f5;
+    width: 7em;
+    height: 2.3em;
+    border: 0.5px solid #444444;
+    border-radius: 10px;
+    margin-left: 10px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+select:focus{
+    outline: none;
+    border: 0.5px solid #FF7A00;
+}
+
+.color input{
+    width: 3em;
+    height: 2em;
+    margin-left: 10px;
+    padding: 0;
+    margin-bottom: 0;
+    border: 0.5px solid #444444;
+    border-radius: 5px;
+}
+
+.display-section{
+   margin-top: 2%;
+   height: 445px;
+   width: 90%;
+   border:1px solid #444444;
+   border-radius: 10px;
+   position: relative;
+   overflow: hidden;
+}
+
+#displayed-text-container{
+    width: 100%;
+    position: absolute;
+}
+
+#displayed-text{
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#image-input{
+    width: 30%;
+    border: none;
+    margin: 0px;
+}
+
+.image-interact{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload-file{
+    margin-top: 2%;
+    height: 40px;
+}
+
+.upload-file label{
+    font-size: 14px;
+    transition: 0.15s;
+}
+
+.upload-file:hover{
+    color:#FF7A00;
+}
+
+.upload-file span{
+    margin-right: 4px;
+}
+
+#image-input{
+    opacity: 0;
+    height: 10px;
+    width: 0;
+}
+
+#reset-image{
+    background-color: #111111;
+    color:#f5f5f5;
+    transition: 0.4s;
+    border: none;
+}
+
+#reset-image:hover{
+    color: #FF7A00;
+}
+
+.mobile-suggested-typefaces{
+    display: none;
+}
+
+/*----Style for smaller screens----*/
+@media screen and (max-width: 795px){
+    h4 {
+        font-size: 17px;
+    }
+
+
+    .filter-total {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .typeface-name {
+        font-size: 15px;
+    }
+
+    .typeface-content{
+        font-size: 20px;
+    }
+
+    .filter{
+        width: 90%;
+    }
+
+    .typeface-total{
+        flex-direction: column;
+    }
+
+    .filter-panel{
+        width: 100%;
+    }
+
+    .outputs{
+        width: 90%;
+    }
+
+    .selected-filters{
+        display: none;
+    }
+
+    .typeface-adjustments{
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 6%;
+    }
+
+
+    .suggsted-typefaces{
+       display: none;
+    }
+
+    .filter-panel{
+        width: 94%;
+    }
+
+   .material-symbols-outlined {
+        font-size: 10px;
+   }
+
+    .top-nav {
+        width: 95%;
+        margin-top: 8%;
+        margin-bottom: 5%;
+    }
+
+    .mobile-suggested-typefaces{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8%;
+        margin-bottom: 12%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .mobile-suggested-typefaces a{
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .mobile-suggested-typefaces a.active{
+        color: #FF7A00;
+    }
+
+    .mobile-menu{
+        color:#f5f5f5;
+    }
+
+    .suggsted-typefaces a{
+        width: 96%;
+        margin-bottom: 2%;
+        margin-top: 5%;
+        font-size: 13px;
+        margin-right: 5%;
+    }
+
+    .typeface-panel{
+        margin-left: 6%;
+        margin-right: 6%;
+        width: 88%;
+        margin-top: 0;
+    }
+
+    .display-section{
+        width: auto;
+    }
+
+    #indi-typeface-name{
+        font-size: 20px;
+        margin-top: 3%;
+        margin-bottom: 5%;
+    }
+
+    .typeface-adjustments p{
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    select{
+        border: 0.3px solid #111111;
+        border-bottom: 0.5px solid #444444;
+        border-radius: 0px;
+    }
+
+    .upload-file label{
+        font-size: 13px;
+    }
+
+    .image-interact{
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+
+    #reset-image{
+        text-align: left;
+    }
+}
+

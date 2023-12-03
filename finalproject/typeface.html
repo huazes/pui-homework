@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Typeface Tool</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Barrio&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Julius+Sans+One&family=Kranky&family=Lacquer&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="js/dragZoom.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+    
+    <script defer src="js/imageInteraction.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="typeface-total">
+        <div class="filter-panel">
+            <div class="top-nav">
+                <a href="index.html" class="back-link"><span class="material-symbols-outlined">arrow_back</span></a>
+                <div class="mobile-suggested-typefaces"></div>
+            </div>
+            
+            <!--Suggested typefaces-->
+            <div class="suggsted-typefaces">
+            </div>
+            
+            <!--Selected filter-->
+            <div class="selected-filters">
+            </div>
+            
+        </div>
+        
+        <div class="division"></div>
+
+        <div class="typeface-panel">
+            <h4 id="indi-typeface-name">Lato</h4>
+            
+            <div class="typeface-adjustments">
+                <div class="size">
+                    <p>Size:</p>
+                    <select name="size" id="size" onchange="changeSize(this)"></select>
+                </div>
+               
+                <div class="font" >
+                    <p>Font:</p>
+                    <select name="font" id="font" onchange="changeFont(this)"></select>
+                </div>
+                
+                <div class="alignment">
+                    <p>Alignment: </p>
+                    <select id="alignment" onchange="changeAlignment(this)">
+                        <option>Left</option>
+                        <option>Center</option>
+                        <option>Right</option>
+                    </select>
+                </div>
+                
+                <div class="color">
+                    <p>Color: </p>
+                    <input type="color" id="color-picker" value="#f5f5f5" onchange="changeColor(this)">
+                </div>
+            </div>
+            
+            <div class="display-section" id="display-part">
+                <div id="displayed-text-container">
+                    <p id="displayed-text">Sample text</p>
+                </div>
+               
+                <img id="uploaded-img-element" />
+            </div>
+
+            <div class="image-interact">
+                <div class="upload-file">
+                    <label for="image-input"><span class="material-symbols-outlined">upload</span>Upload background to test this typeface</label>
+                    <input type="file" id="image-input" accept=".jpg, .jpeg, .png" >
+                </div>
+                
+                <button id="reset-image" onclick="removeImage()">Reset</button>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    
+
+</body>
