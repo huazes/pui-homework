@@ -3,9 +3,6 @@ let storedInput = "";
 let storedSelection = [];
 let storedArray = [];
 
-
-mainPageRetrieve(); // program for initial value
-
 function mainPageRetrieve(){
     let storedInput = localStorage.getItem("storedUserInput");
 
@@ -109,7 +106,7 @@ let typefaceArray = [
 var selectedMood = "";
 var selectedFunc = "";
 var selectedAvail = "";
-
+mainPageRetrieve();
 
 function resetFilter(){
     // Clear input content
