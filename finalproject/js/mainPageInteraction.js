@@ -4,7 +4,7 @@ let storedSelection = [];
 let storedArray = [];
 
 
-mainPageRetrieve();
+mainPageRetrieve(); // program for initial value
 
 function mainPageRetrieve(){
     let storedInput = localStorage.getItem("storedUserInput");
@@ -106,9 +106,9 @@ let typefaceArray = [
     rockwell, garamond, impact,
     comicSans, lacquer, barrio, kranky];
 
-let selectedMood = "";
-let selectedFunc = "";
-let selectedAvail = "";
+var selectedMood = "";
+var selectedFunc = "";
+var selectedAvail = "";
 
 
 function resetFilter(){
