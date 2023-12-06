@@ -7,9 +7,11 @@ function retrieveLocalStorage(){
     suggestedTypefaceArray = JSON.parse(storedTypefaceString);
 
     retrievedContent = localStorage.getItem("storedUserInput");
+    
     if (retrievedContent == ""){
         retrievedContent = "Sample Text";
     }
+    
     let storedFilterString = localStorage.getItem("storedFilter");
     retrievedFilter = JSON.parse(storedFilterString);
 }
@@ -55,9 +57,10 @@ retrieveImageStorage();
 // Update chosen image from local storage
 function retrieveImageStorage(){
     let retrievedSrc = localStorage.getItem("imageSource");
+
     let imgContainer = document.querySelector("#uploaded-img-element");
 
-    if (retrievedSrc !== ""){
+    if (retrievedSrc !== null){
         imgContainer.src = retrievedSrc;
 
         imgContainer.style.width = '100%';

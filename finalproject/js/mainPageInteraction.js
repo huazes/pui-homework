@@ -13,32 +13,35 @@ function mainPageRetrieve(){
     let storedSelectionString = localStorage.getItem("storedFilter");
     storedSelection = JSON.parse(storedSelectionString);
 
-    //retrieve selected mood
-    let storedMood = storedSelection[0];
-    let parentMoodDiv = document.querySelector(".mood-options");
-    for (let child of parentMoodDiv.children){
-        if (child.innerText === storedMood){
-            child.classList.toggle("clickedOption");
+    if (storedSelection != null){
+        let storedMood = storedSelection[0];
+    
+        let parentMoodDiv = document.querySelector(".mood-options");
+        for (let child of parentMoodDiv.children){
+            if (child.innerText === storedMood){
+                child.classList.toggle("clickedOption");
+            }
+        }
+    
+        //retrieve selected functions
+        let storedFunc = storedSelection[1];
+        let parentFuncDiv = document.querySelector(".functionality-options");
+        for (let child of parentFuncDiv.children){
+            if (child.innerText === storedFunc){
+                child.classList.toggle("clickedOption");
+            }
+        }
+    
+        //retrieve selected availabilities
+        let storedAvail = storedSelection[2];
+        let parentAvailDiv = document.querySelector(".availability-options");
+        for (let child of parentAvailDiv.children){
+            if (child.innerText === storedAvail){
+                child.classList.toggle("clickedOption");
+            }
         }
     }
-
-    //retrieve selected functions
-    let storedFunc = storedSelection[1];
-    let parentFuncDiv = document.querySelector(".functionality-options");
-    for (let child of parentFuncDiv.children){
-        if (child.innerText === storedFunc){
-            child.classList.toggle("clickedOption");
-        }
-    }
-
-    //retrieve selected availabilities
-    let storedAvail = storedSelection[2];
-    let parentAvailDiv = document.querySelector(".availability-options");
-    for (let child of parentAvailDiv.children){
-        if (child.innerText === storedAvail){
-            child.classList.toggle("clickedOption");
-        }
-    }
+   
 
     let storedArrayString = localStorage.getItem("storedTypefaces");
     storedArray = JSON.parse(storedArrayString);   
