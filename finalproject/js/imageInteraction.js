@@ -79,6 +79,7 @@ function retrieveImageStorage(){
         });
     }
     else{
+        console.log(retrievedSrc);
         imgContainer.removeAttribute("src");
     }
 }
