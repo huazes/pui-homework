@@ -45,7 +45,7 @@ function mainPageRetrieve(){
     
     let storedArrayString = localStorage.getItem("storedTypefaces");
     storedArray = JSON.parse(storedArrayString);   
-    if (storageArray !=  null){
+    if (storedArray !=  null){
         displayTypefaces(storedArray);
     }
 }
