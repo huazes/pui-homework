@@ -42,10 +42,12 @@ function mainPageRetrieve(){
         }
     }
    
-
+    
     let storedArrayString = localStorage.getItem("storedTypefaces");
     storedArray = JSON.parse(storedArrayString);   
-    displayTypefaces(storedArray);
+    if (storageArray !=  null){
+        displayTypefaces(storedArray);
+    }
 }
 
 

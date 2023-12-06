@@ -60,7 +60,7 @@ function retrieveImageStorage(){
 
     let imgContainer = document.querySelector("#uploaded-img-element");
 
-    if (retrievedSrc !== null){
+    if (retrievedSrc !== ""){
         imgContainer.src = retrievedSrc;
 
         imgContainer.style.width = '100%';
@@ -77,6 +77,9 @@ function retrieveImageStorage(){
             }, function() {});
     
         });
+    }
+    else{
+        imgContainer.removeAttribute("src");
     }
 }
 
