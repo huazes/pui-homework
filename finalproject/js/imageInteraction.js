@@ -2,29 +2,32 @@
 let suggestedTypefaceArray = [];
 let retrievedContent = "";
 let retrievedFilter = [];
+
 function retrieveLocalStorage(){
+    // Retrieve typeface list
     let storedTypefaceString = localStorage.getItem("storedTypefaces");
     suggestedTypefaceArray = JSON.parse(storedTypefaceString);
 
     retrievedContent = localStorage.getItem("storedUserInput");
     
+    // Show "sample text" if user did not input anything previously
     if (retrievedContent == ""){
         retrievedContent = "Sample Text";
     }
     
+    // Retrieve selected options for filters
     let storedFilterString = localStorage.getItem("storedFilter");
     retrievedFilter = JSON.parse(storedFilterString);
 }
 retrieveLocalStorage();
 
-// Change a list of suggested typefaces based on local storage
+// Change and display the list of typefaces based on local storage (both laptop and mobile version)
 let suggestedTypeContainer = document.querySelector(".suggsted-typefaces");
-let mobileTypeContainer = document.querySelector(".mobile-suggested-typefaces");
-
 while (suggestedTypeContainer.hasChildNodes()) {
     suggestedTypeContainer.removeChild(suggestedTypeContainer.firstChild);
 }
 
+let mobileTypeContainer = document.querySelector(".mobile-suggested-typefaces");
 while (mobileTypeContainer.hasChildNodes()){
     mobileTypeContainer.removeChild(mobileTypeContainer.firstChild);
 }
@@ -51,9 +54,6 @@ const typeName = params.get("name");
 let indiTypefaceName = document.querySelector("#indi-typeface-name");
 indiTypefaceName.innerText = typeName;
 
-let displayedText = document.querySelector("#displayed-text");
-
-retrieveImageStorage();
 // Update chosen image from local storage
 function retrieveImageStorage(){
     let retrievedSrc = localStorage.getItem("imageSource");
@@ -82,6 +82,7 @@ function retrieveImageStorage(){
         imgContainer.removeAttribute("src");
     }
 }
+retrieveImageStorage();
 
 // Highlight visiting page option 
 function updateVisitingFont(){
@@ -103,13 +104,12 @@ function updateVisitingFont(){
 }
 updateVisitingFont();
 
-
-// Update text based on user input
-let displayedSampleText = document.querySelector("#displayed-text");
-displayedSampleText.innerText = retrievedContent;
+// Demonstrate the user input based on current typeface
+let displayedText = document.querySelector("#displayed-text");
+displayedText.innerText = retrievedContent;
 for (let i = 0; i < suggestedTypefaceArray.length; i++){
     if (typeName === suggestedTypefaceArray[i].name){
-        displayedSampleText.style.fontFamily = suggestedTypefaceArray[i].fontFamily;
+        displayedText.style.fontFamily = suggestedTypefaceArray[i].fontFamily;
     }
 }
 
@@ -125,7 +125,7 @@ for (let i = 0; i < retrievedFilter.length; i++){
     selectedFilters.appendChild(newFilter);
 }
 
-// Change font's size
+// Populate available typeface sizes
 let sizeOption = document.getElementById("size");
 
 for (let i = 20; i<110; i = i+10){
@@ -138,12 +138,7 @@ for (let i = 20; i<110; i = i+10){
     sizeOption.appendChild(newSize);
 }
 
-function changeSize() {
-    let selectedSize = document.querySelector("#size").value;
-    displayedText.style.fontSize = selectedSize;
-}
-
-// Change font weight
+// Populate available typeface fonts
 let fontOption = document.getElementById("font");
 let currentTypeface;
 
@@ -168,6 +163,13 @@ for (let i = 0; i < keys.length; i++){
     fontOption.appendChild(newFontWeight);
 }
 
+// Change the size of user input
+function changeSize() {
+    let selectedSize = document.querySelector("#size").value;
+    displayedText.style.fontSize = selectedSize;
+}
+
+// Change the font of user input
 function changeFont(){
     let selectedSize = document.querySelector("#font").value;
     displayedText.style.fontWeight = selectedSize;
@@ -186,13 +188,14 @@ function changeColor(){
     displayedText.style.color = colorPicker.value;
 }
 
-// Upload image
+// Allow users to upload images
 let imageInput = document.querySelector("#image-input");
 let uploadedImage = "";
 imageInput.addEventListener("change", changeImage);
 
 let imageLoaded = false;
 
+// Reference: https://www.jqueryscript.net/other/zoom-wheel-pan-drag-image.html
 function changeImage(){
     let reader = new FileReader(); // reference
     let file = document.querySelector("#image-input").files[0];
@@ -200,13 +203,16 @@ function changeImage(){
         let imageElement = document.querySelector("#uploaded-img-element");
         imageElement.src = reader.result;
 
+        // Store image source to local storage so that when user clicks a new typeface, the image is remained
         saveImageLocal(imageElement.src);
 
+        // Update the feature of uploaded image
         imageElement.style.width = '100%';
         imageElement.style.height = '100%';
         imageElement.style.position = 'absolute';
         imageElement = true;
 
+        // Add interactivity of the image (users can drag and zoom the image)
         $(function() {
                 $('#uploaded-img-element').dragZoom({
                     scope: $("#display-part"),
@@ -224,9 +230,9 @@ function changeImage(){
     }
 }
 
+// Save image source to local storage
 function saveImageLocal(imageSrc){
     localStorage.setItem("imageSource", imageSrc);
-    
 }
 
 // Remove image after clicking "reset"
@@ -237,6 +243,7 @@ function removeImage(){
     let container = document.querySelector("#display-part");
     container.append(newImageHolder);
 
+    // Update to local storage
     let imageSrc = "";
     saveImageLocal(imageSrc);
 }

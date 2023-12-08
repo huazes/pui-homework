@@ -1,9 +1,11 @@
+/*-------------Style for laptop screens-------------*/
 body{
     background-color: #111111;
     color: #f5f5f5;
     font-family: 'Inter', sans-serif;
 }
 
+/*----Style for the filtering page----*/
 .filter-total{
     display: flex;
 }
@@ -175,7 +177,7 @@ input:focus{
     font-size: 28px;
 }
 
-/*----Style for individual typeface----*/
+/*----Style for the page that shows individual typefaces----*/
 .typeface-total{
     display: flex;
 }
@@ -353,7 +355,7 @@ select:focus{
     display: none;
 }
 
-/*----Style for smaller screens----*/
+/*-------------Style for smaller screens-------------*/
 @media screen and (max-width: 795px){
     h4 {
         font-size: 17px;

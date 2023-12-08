@@ -270,6 +270,7 @@ function displayTypefaces(displayTypefaceArray){
         typefaceLink.appendChild(newTypefaceContent);
     }
 }
+
 // Update the content of text based on users' input
 function updateTextContent(){
     let textContent = document.getElementsByClassName("typeface-content");
