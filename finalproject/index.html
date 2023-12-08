@@ -24,16 +24,19 @@
 <body>
     <div class="filter-total">
         <div class="filter">
+
+            <!-- Reset button-->
             <div class="reset-button">
                 <button id="reset" onclick="resetFilter()">Reset</button>
             </div>
     
             <!-- User input text-->
             <div class="user-input">
-                
-                <label>Preview Text</label>
-                <br>
-                <input id="user-input-text" type="text" placeholder="Input your text here" onchange="updateTextContent(this)">
+                <form>
+                    <label for="user-input-text">Preview Text</label>
+                    <br>
+                    <input id="user-input-text" type="text" placeholder="Input your text here" onchange="updateTextContent(this)">    
+                </form>
             </div>
             
             <!-- The mood user tries to convey-->
@@ -72,7 +75,8 @@
             
             
         </div>
-    
+        
+        <!-- Division line that separates filter from recommended typeface list-->
         <div class="division">
         </div>
 

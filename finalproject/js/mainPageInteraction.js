@@ -1,4 +1,4 @@
-// Retrieve typefaces list
+// Retrieve users' input, previous selections, and the list of recommended typefaces
 let storedInput = "";
 let storedSelection = [];
 let storedArray = [];
@@ -6,16 +6,18 @@ let storedArray = [];
 function mainPageRetrieve(){
     let storedInput = localStorage.getItem("storedUserInput");
 
-    // retrieve user input
+    // Retrieve and display user input
     let userInputContect = document.querySelector("#user-input-text");
     userInputContect.value = storedInput;
     
+    // Retrieve and display previous selected filters
     let storedSelectionString = localStorage.getItem("storedFilter");
     storedSelection = JSON.parse(storedSelectionString);
 
     if (storedSelection != null){
         let storedMood = storedSelection[0];
-    
+        
+        // Show selected moods by toggling classes
         let parentMoodDiv = document.querySelector(".mood-options");
         for (let child of parentMoodDiv.children){
             if (child.innerText === storedMood){
@@ -23,7 +25,7 @@ function mainPageRetrieve(){
             }
         }
     
-        //retrieve selected functions
+        // Show selected functions by toggling classes
         let storedFunc = storedSelection[1];
         let parentFuncDiv = document.querySelector(".functionality-options");
         for (let child of parentFuncDiv.children){
@@ -32,7 +34,7 @@ function mainPageRetrieve(){
             }
         }
     
-        //retrieve selected availabilities
+        // Show selected availabilities by toggling classes
         let storedAvail = storedSelection[2];
         let parentAvailDiv = document.querySelector(".availability-options");
         for (let child of parentAvailDiv.children){
@@ -42,15 +44,16 @@ function mainPageRetrieve(){
         }
     }
    
-    
+    // Retrieve and display the previous list of recommended typefaces
     let storedArrayString = localStorage.getItem("storedTypefaces");
-    storedArray = JSON.parse(storedArrayString);   
-    if (storedArray !=  null){
+    if (storedArrayString !=  null){
+        storedArray = JSON.parse(storedArrayString);   
         displayTypefaces(storedArray);
     }
 }
+mainPageRetrieve();
 
-
+// Define a class for all typefaces
 class Typeface{
     constructor(name, mood, functionality, availability, fontFamily, fontWeight){
         this.name = name;
@@ -62,6 +65,7 @@ class Typeface{
     }
 }
 
+// Create typeface objects //
 // Formal Typefaces
 let librebakerville = new Typeface("Libre Baskerville", "Formal", ["Heading", "Sub-heading", "Paragraph"], ["Canva", "Figma", "Google Slides"], "'Libre Baskerville', serif",{"Regular":400, "Bold": 900});
 let georgia = new Typeface("Georgia","Formal", ["Heading", "Sub-heading", "Paragraph"], ["Canva", "Figma", "Google Slides"], "'Georgia', serif", {"Normal": 400, "Bold": 700});
@@ -98,7 +102,7 @@ let lacquer = new Typeface("Lacquer","Playful", ["Heading", false, false], ["Can
 let barrio = new Typeface("Barrio","Playful", ["Heading", false, false], ["Canva", "Figma", "Google Slides"], "'Barrio', sans-serif", {"Regular":400});
 let kranky = new Typeface("Kranky","Playful", ["Heading", false, false], ["Canva", false, "Google Slides"], "'Kranky', cursive", {"Regular":400});
 
-// Array of Typeface Objects
+// Create an array of Typeface Objects
 let typefaceArray = [
     librebakerville, georgia, timesNewRoman, 
     arial, calibri, helvetica, 
@@ -106,18 +110,15 @@ let typefaceArray = [
     juliusSans, playfair, montserrat, 
     lato, openSans,
     rockwell, garamond, impact,
-    comicSans, lacquer, barrio, kranky];
+    comicSans, lacquer, barrio, kranky
+];
 
-var selectedMood = "";
-var selectedFunc = "";
-var selectedAvail = "";
-mainPageRetrieve();
-
+// Reset the filters after the user clicks on "reset" button
 function resetFilter(){
     // Clear input content
     document.querySelector("#user-input-text").value = "";
 
-    // Clear filter options
+    // Clear filter options by removing a class
     let parentMoodDiv = document.querySelector(".mood-options");
     for (let child of parentMoodDiv.children){
         child.classList.remove("clickedOption");  
@@ -137,8 +138,9 @@ function resetFilter(){
     let parentTypefaceListDiv = document.querySelector(".typeface-list");
     while (parentTypefaceListDiv.hasChildNodes()) {
         parentTypefaceListDiv.removeChild(parentTypefaceListDiv.firstChild);
-      }
+    }
 
+    // Update local storage
     displayTypefaceArray = [];
     let selectedFilterArray = [];
     saveToLocalStorage(displayTypefaceArray, selectedFilterArray);
@@ -147,7 +149,11 @@ function resetFilter(){
     saveUserInput(userInput);
 }
 
-// change style of options after clicking
+// Change style of options after clicking
+var selectedMood = "";
+var selectedFunc = "";
+var selectedAvail = "";
+
 function changeMood(element){
     let parentDiv = document.querySelector(".mood-options");
     for (let child of parentDiv.children){
@@ -155,7 +161,9 @@ function changeMood(element){
     }
     element.classList.toggle("clickedOption");
 
+    // Get users' selection
     selectedMood = element.innerHTML;
+    
     filterTypefaces();
 }
 
@@ -165,10 +173,11 @@ function changeFunc(element){
         child.classList.remove("clickedOption");  
     }
     element.classList.toggle("clickedOption");
-    selectedFunc = element.innerHTML;
 
+    // Get users' selection
+    selectedFunc = element.innerHTML;
+    // Filter typefaces based on users' selection
     filterTypefaces();
-    
 }
 
 function changeAvail(element){
@@ -177,15 +186,19 @@ function changeAvail(element){
         child.classList.remove("clickedOption");  
     }
     element.classList.toggle("clickedOption");
-    selectedAvail = element.innerHTML;
 
+    // Get users' selection
+    selectedAvail = element.innerHTML;
+    // Filter typefaces based on users' selection
     filterTypefaces();
 }
 
 
 // Filter out the list of typefaces based on users' need
 function filterTypefaces(){
+    // Store filtered typefaces in a new array
     let displayTypefaceArray = [];
+
     for (i = 0; i < typefaceArray.length; i++){
         let indiTypeface = typefaceArray[i];
 
@@ -205,40 +218,44 @@ function filterTypefaces(){
         }
     }
     displayTypefaces(displayTypefaceArray);
+
+    // Save the filter option and outputs to local storage
     let selectedFilterArray = [selectedMood, selectedFunc, selectedAvail];
     saveToLocalStorage(displayTypefaceArray, selectedFilterArray);
 }
 
-// Display a list of typefaces based on filters
+// Display the list of typefaces based on filters
 function displayTypefaces(displayTypefaceArray){
     let userInput = document.querySelector("#user-input-text").value;
     let container = document.querySelector(".typeface-list");
 
+    // Remove recommended typefaces based on previous selections
     while (container.hasChildNodes()) {
-        container.removeChild(container.firstChild);
-      }
-
+          container.removeChild(container.firstChild);
+    }
+    
+    // Display a new list of recommended typefaces
     for (i = 0; i < displayTypefaceArray.length; i++){
-        // create a container for an individual typeface
+        // Create a container for an individual typeface
         let oneTypefaceContainer = document.createElement("div");
         oneTypefaceContainer.classList.add("one-typeface-container");
         oneTypefaceContainer.setAttribute("id", displayTypefaceArray[i].name);
         container.appendChild(oneTypefaceContainer);
 
-        // add link to individual typeface
+        // Add link to individual typeface
         let typefaceLink = document.createElement("a");
         typefaceLink.classList.add("typeface-link");
         let typefaceName = displayTypefaceArray[i].name;
         typefaceLink.href = "typeface.html?name=" + typefaceName;
         oneTypefaceContainer.appendChild(typefaceLink);
 
-        // display individual typefaces' name
+        // Display individual typefaces' name
         let newTypefaceName = document.createElement("p");
         newTypefaceName.innerText = displayTypefaceArray[i].name;
         newTypefaceName.classList.add("typeface-name");
         typefaceLink.appendChild(newTypefaceName);
 
-        // display individual typefaces' content through users' input
+        // Display individual typefaces' content through users' input
         let newTypefaceContent = document.createElement("p");
         newTypefaceContent.innerText = userInput;
         if (userInput ===""){
@@ -246,13 +263,13 @@ function displayTypefaces(displayTypefaceArray){
             userInput = "Sample Text";
         }
 
+        // Let users preview how their input looks like in specific typefaces
         newTypefaceContent.style.fontFamily = displayTypefaceArray[i].fontFamily;
 
         newTypefaceContent.classList.add("typeface-content");
         typefaceLink.appendChild(newTypefaceContent);
     }
 }
-
 // Update the content of text based on users' input
 function updateTextContent(){
     let textContent = document.getElementsByClassName("typeface-content");
@@ -266,9 +283,12 @@ function updateTextContent(){
             textContent[i].innerText = userInput;
         }
     }
+
+    // Store user input to local storage because it will be used for other pages
     saveUserInput(userInput);
 }
 
+// Save users input, selected filters, and recommended typeface list to local storage
 function saveToLocalStorage(displayTypefaceArray, selectedFilterArray){
     let typefaceString = JSON.stringify(displayTypefaceArray);
     localStorage.setItem("storedTypefaces", typefaceString);
