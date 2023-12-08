@@ -29,6 +29,11 @@ body{
     margin-top: 10%;
 }
 
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 h4{
     font-size: 20px;;
 }
@@ -56,11 +61,16 @@ h4{
     color: #FF7A00;
 }
 
+#user-input-text{
+    margin-top: 10%;
+}
+
 .user-input, .user-mood, .user-functionality, .user-availability{
-    margin-bottom: 6%;
+    margin-bottom: 5%;
 }
 
 .user-input{
+    margin-top: 6%;
     width: 84%;
 }
 
